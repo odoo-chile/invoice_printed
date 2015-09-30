@@ -1,0 +1,2 @@
+import invoice_printed
+import picking_printed
