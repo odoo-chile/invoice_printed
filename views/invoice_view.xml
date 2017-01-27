@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+            
+        <record id="invoice_printed_tab_form" model="ir.ui.view">
+            <field name="name">invoice.printed.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <!--<button string="Refund Invoice" position="before">
+                    <button name="invoice_print" string="Print Invoice" type="object" attrs="{'invisible':[('state', '!=', 'paid')]}" groups="base.group_user"/>
+                </button>-->
+                <!--<field name="invoice_line" position="attributes">
+                    <attribute name="context">{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type}" name="invoice_line" on_change="onchange_invoice_line(invoice_line)</attribute>
+                </field>-->
+                <notebook>
+                    <page string="Fiscal Controller" name="fiscal_controller">
+                        <group>
+                            <field name="invoice_printed"/>
+                            <field name="controller_cmnd"/>
+                            <field name="controller_ansr"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>
